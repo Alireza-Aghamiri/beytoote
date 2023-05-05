@@ -1,0 +1,1219 @@
+* {
+    box-sizing: border-box;
+    bottom: 0;
+    margin: 0;
+    font-family: vazir;
+}
+
+@font-face {
+    font-family: vazir;
+    src: url(font/Vazir.woff);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+ul li {
+    list-style: none;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+header {
+    width: 98%;
+    margin: auto;
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div.icon {
+    display: flex;
+    align-items: center;
+}
+
+/* hamberger menu */
+header div.icon div.box {
+    position: relative;
+}
+
+header div.icon div.nav-hamberger {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+}
+
+header div.icon div.menu {
+    width: 200px;
+    position: absolute;
+    top: 35px;
+    right: -15px;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+
+header div.icon div.box:hover div.menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+header div.icon div.menu ul {
+    background-color: rgb(247 247 247);
+    border-radius: 15px 0 0 15px;
+    padding: 15px 15px 15px 0;
+    box-shadow: -4px 4px 4px 0px #9999995e;
+}
+
+header div.icon div.menu div.drop-drag {
+    width: 100%;
+    position: relative;
+    transition: .4s;
+    border-radius: 15px;
+}
+
+header div.icon div.menu div.drop-drag li {
+    margin-left: 15px;
+    border-radius: 10px;
+}
+
+header div.icon div.menu div.drop-drag i {
+    margin-left: 5px;
+    padding-right: 10px;
+}
+
+header div.icon div.menu div.drop-drag:hover div.submenu {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+}
+
+header div.icon div.menu div.drop-drag:hover div.submenu li:hover {
+    background-color: #0173dd;
+    color: #fff;
+}
+
+header div.icon div.menu div.drop-drag:hover li.selected-menu {
+    background-color: #0173dd;
+    color: #fff;
+}
+
+header div.icon div.menu div.drop-drag div.submenu {
+    width: 100%;
+    position: absolute;
+    right: 185px;
+    top: -15px;
+    transform: translateX(200px);
+    transition: .5s;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+}
+
+header div.icon div.menu div.drop-drag div.submenu ul {
+    width: 200px;
+    background-color: rgb(247 247 247);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: -4px 4px 4px 0px #9999995e, -1px -1px 2px 0px #9999995e;
+}
+
+header div.icon div.menu div.drop-drag div.submenu ul li {
+    width: 98%;
+    padding-right: 10px;
+}
+
+header div.icon div.menu a {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+header div.icon div.nav-hamberger:hover div.lines:hover div.line1 {
+    transform: translateX(-35px);
+}
+
+header div.icon div.nav-hamberger:hover div.lines:hover div.line1-right {
+    transform: translateX(-35px);
+
+}
+
+header div.icon div.nav-hamberger:hover div.lines:hover div.line3 {
+    transform: translateX(35px);
+}
+
+header div.icon div.nav-hamberger:hover div.lines:hover div.line3-left {
+    transform: translateX(35px);
+}
+
+header div.icon div.nav-hamberger div.icon-circle {
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+header div.icon div.nav-hamberger div.icon-circle div {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #555;
+}
+
+header div.icon div.nav-hamberger div.lines {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+header div.icon div.nav-hamberger div.lines div.box {
+    width: 25px;
+    height: 30px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+header div.icon div.nav-hamberger div.lines div.box div {
+    width: 25px;
+    height: 3px;
+    background-color: #555;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+/* search box */
+header div.icon div.search {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div.icon div.search i {
+    background-color: rgb(233, 233, 233);
+    border-radius: 0 5px 5px 0;
+    padding: 8px 8px 8px 7px;
+    color: #555;
+    font-size: 20px;
+}
+
+header div.icon div.search div.box-search {
+    overflow: hidden;
+}
+
+header div.icon div.search div.box-search input {
+    width: 205px;
+    height: 36px;
+    transform: translateX(98%);
+    background-color: rgb(233, 233, 233);
+    outline: none;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    transition: 1s;
+    padding: 10px;
+    display: inline-block;
+    font-size: 18px;
+    color: #555;
+}
+
+header div.icon div.search:hover div.box-search input {
+    transform: translateX(0);
+}
+
+/* navigation */
+header nav {
+    width: 48%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 50%;
+    top: 35px;
+    transform: translateX(50%);
+    font-size: 15px;
+}
+
+header nav a i {
+    font-size: 14px;
+    transition: .4s;
+    color: #0173dd;
+}
+
+header nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+header nav a::after {
+    content: "";
+    background-color: #0173dd;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    transition: .5s;
+}
+
+header nav a:hover::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* logo */
+header div.logo {
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+header div.logo:hover img.second-logo {
+    opacity: 1;
+}
+
+header div.logo:hover img.default-logo {
+    transform: scale(.1);
+}
+
+header div.logo img.default-logo {
+    transition: .6s;
+}
+
+header div.logo img.second-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: .6s;
+}
+
+/* background header */
+div.box-design-left {
+    width: 20%;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    left: -290px;
+    z-index: -1;
+}
+
+div.box-design-left>div {
+    height: 400px;
+    border-radius: 50% 50%/50% 30%;
+    border: 1px solid #f8f8f8;
+    position: absolute;
+    right: 50px;
+    transform: rotate(40deg);
+}
+
+div.box-design-left div.box1 {
+    width: 100%;
+    top: 10px;
+}
+
+div.box-design-left div.box2 {
+    width: 93%;
+    top: 13px;
+    right: 68px;
+}
+
+div.box-design-left div.box3 {
+    width: 86%;
+    top: 16px;
+    right: 86px;
+}
+
+div.box-design-left div.box4 {
+    width: 79%;
+    top: 19px;
+    right: 104px;
+}
+
+div.box-design-left div.box5 {
+    width: 72%;
+    top: 22px;
+    right: 122px;
+}
+
+div.box-design-left div.box6 {
+    width: 65%;
+    top: 25px;
+    right: 140px;
+}
+
+div.box-design-left div.box7 {
+    width: 58%;
+    top: 28px;
+    right: 158px;
+}
+
+div.box-design-left div.box8 {
+    width: 51%;
+    top: 31px;
+    right: 176px;
+}
+
+div.box-design-left div.box9 {
+    width: 44%;
+    top: 34px;
+    right: 194px;
+}
+
+div.box-design-left div.box10 {
+    width: 37%;
+    top: 37px;
+    right: 212px;
+}
+
+div.box-design-left div.box11 {
+    width: 30%;
+    top: 40px;
+    right: 230px;
+}
+
+div.box-design-left div.box12 {
+    width: 23%;
+    top: 43px;
+    right: 248px;
+}
+
+div.box-design-left div.box13 {
+    width: 16%;
+    top: 46px;
+    right: 266px;
+}
+
+div.box-design-left div.box14 {
+    width: 9%;
+    top: 49px;
+    right: 284px;
+}
+
+div.box-design-left div.box15 {
+    width: 2%;
+    top: 52px;
+    right: 303px;
+}
+
+/* main content */
+div.main-content {
+    padding: 10px 0;
+    background-color: rgb(248, 248, 248);
+}
+
+/* recent news */
+div.main-content div.recent-news {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 2px 0;
+}
+
+div.main-content div.recent-news>a {
+    overflow: hidden;
+}
+
+div.main-content div.recent-news a#first-news {
+    grid-row: 1/1;
+}
+
+div.main-content div.recent-news a#important-news {
+    grid-row: 1/3;
+    margin: 0 2px;
+}
+
+div.main-content div.recent-news a.news {
+    position: relative;
+}
+
+div.main-content div.recent-news a.news img {
+    transition: .5s;
+}
+
+div.main-content div.recent-news a.news div.mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(to top, #00000090, transparent);
+}
+
+div.main-content div.recent-news a.news:hover div.mask {
+    background-image: linear-gradient(to top, #000000d6, transparent);
+}
+
+div.main-content div.recent-news a.news:hover img {
+    transform: scale(1.1);
+}
+
+div.main-content div.recent-news a.news div.mask div.caption {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+div.main-content div.caption div.category {
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: -90px;
+    border-radius: 4px;
+    transition: .6s;
+    opacity: 0;
+}
+
+div.main-content div.recent-news a.news:hover div.mask div.caption div.category {
+    position: absolute;
+    right: 10px;
+    opacity: 1;
+}
+
+div.blue {
+    background-color: #2462D3;
+}
+
+div.green {
+    background-color: #50B36C;
+}
+
+div.red {
+    background-color: #D90866;
+}
+
+div.purple {
+    background-color: #7f46c5;
+}
+
+div.yellow {
+    background-color: #F6C100;
+}
+
+div.brown {
+    background-color: #B7854C;
+}
+
+div.lilac {
+    background-color: #B660cd;
+}
+
+div.orange {
+    background-color: #F46F22;
+}
+
+div.gray {
+    background-color: rgb(150, 150, 150);
+}
+
+div.main-content div.recent-news a.news div.mask div.caption h2 {
+    color: #E9E9E8;
+    position: absolute;
+    bottom: 35px;
+    right: 15px;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px #000000cc;
+}
+
+div.main-content div.recent-news a.news div.mask div.caption div.date {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    color: #E9E9E8;
+    font-size: 12px;
+}
+
+/* news main part */
+div.main-content div.news-main {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin-top: 10px;
+}
+
+/* sidebar title */
+div.main-content div.news-main div.sidebar {
+    margin-left: -10px;
+    margin-top: 30px;
+    padding: 0 10px;
+    background-image: linear-gradient(to bottom, rgb(238, 238, 238),rgb(238, 238, 238),rgb(238, 238, 238), transparent);
+}
+
+div.main-content div.news-main div.title-card {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px 0 20px;
+}
+
+div.main-content div.news-main div.sidebar div.title-card {
+    padding-bottom: 0;
+}
+
+div.main-content div.news-main div.sidebar div.title-card:hover div#hidde-style {
+    margin-right: 0;
+}
+
+div.main-content div.news-main div.title-card h2 {
+    font-weight: 100;
+    margin: 0 15px;
+}
+
+div.main-content div.news-main div.sidebar div.title-card div#hidde-style {
+    transition: .7s;
+    margin-right: -190px;
+}
+
+div.main-content div.news-main div.title-card div.style-line {
+    width: 300%;
+    height: 3px;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+
+/* main title */
+div.main-content div.news-main div.main div.title-card {
+    flex-wrap: wrap;
+}
+
+div.main-content div.news-main div.main div.title-card h2 {
+    transition: .7s;
+}
+
+div.main-content div.news-main div.main div.title-card .background-title {
+    width: 100%;
+    background-image: linear-gradient(to left, rgb(211 210 210), rgb(222 220 220), transparent);
+}
+
+/* services category */
+div.main-content div.news-main section.services-category div.card {
+    width: 100%;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 25px;
+}
+
+div.main-content div.news-main section.services-category div.card img {
+    transition: .5s;
+}
+
+div.main-content div.news-main section.services-category div.card:hover img {
+    transform: translateX(4%);
+}
+
+div.main-content div.news-main section.services-category div.card div.mask {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    color: #fff;
+}
+
+div.main-content div.news-main section.services-category div.card div.mask h3 {
+    font-size: 18px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px #000;
+}
+
+div.main-content div.news-main section.services-category div.card div.mask span {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    font-weight: 100;
+    border-radius: 50%;
+}
+
+div.mask-brown {
+    background-color: rgb(137 55 0 / 20%);
+}
+
+div.mask-blue {
+    background-color: rgba(0, 64, 137, 0.2);
+}
+
+div.mask-yellow {
+    background-color: rgba(128, 137, 0, 0.2);
+}
+
+div.mask-gray {
+    background-color: rgba(119, 119, 119, 0.466);
+}
+
+div.mask-green {
+    background-color: rgba(0, 41, 3, 0.404);
+}
+
+div.mask-red {
+    background-color: rgba(137, 0, 0, 0.2);
+}
+
+div.mask-cream {
+    background-color: rgba(65, 64, 55, 0.2);
+}
+
+/* main */
+div.main-content div.news-main div.main>div {
+    background-image: linear-gradient(to bottom, rgb(238, 238, 238), transparent);
+    padding: 10px;
+    margin: 30px 20px 0 0;
+}
+
+div.main-content div.news-main div.main section.box-news {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: 190px 190px 190px;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+div.main-content div.news-main div.main section.box-news>a {
+    overflow: hidden;
+}
+
+div.main-content div.news-main div.main section.box-news :nth-child(1) {
+    grid-row: 1/3;
+}
+
+div.main-content div.news-main div.main section.box-news :nth-child(2) {
+    grid-row: 1/1;
+}
+
+/* big card news */
+div.main-content div.news-main div.main section.box-news a.big-card-news {
+    position: relative;
+}
+
+div.main-content div.news-main div.main section.box-news a.big-card-news:hover img {
+    transform: scale(1.1);
+}
+
+div.main-content div.news-main div.main section.box-news a.big-card-news img {
+    transition: .5s;
+}
+
+div.main-content div.news-main div.main section.box-news a.big-card-news div.mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(45deg, #00000099, transparent);
+}
+
+div.main-content div.news-main div.main section.box-news a.big-card-news:hover div.category {
+    position: absolute;
+    right: 10px;
+    opacity: 1;
+}
+
+div.main section.box-news a.big-card-news div.mask div.caption {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+div.main section.box-news a.big-card-news div.mask div.caption h2 {
+    width: 75%;
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+    color: #fff;
+    font-size: 20px;
+    transition: .5s;
+}
+
+div.main section.box-news a.big-card-news div.mask div.caption div.date {
+    width: 25%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 12px;
+    transition: .5s;
+}
+
+/* card news */
+div.main section.box-news a.card-news {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+div.main section.box-news a.card-news div.photo {
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+div.main section.box-news a.card-news div.caption {
+    position: relative;
+    margin: 10% 0;
+}
+
+div.main section.box-news a.card-news div.caption div.category {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    opacity: 1;
+}
+
+div.main section.box-news a.card-news div.caption h2 {
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+div.main section.box-news a.card-news div.caption div.date {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* box economy */
+div.main-content div.news-main div.main div.box-economy section.box-news {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: repeat(4, 120px);
+}
+
+div.main-content div.news-main div.main div.box-economy section.box-news a.big-card-news {
+    grid-row: 1/5;
+}
+
+div.main-content div.news-main div.main div.box-economy section.box-news div.none-morgin {
+    margin: -20px 0 0;
+}
+
+/* third design */
+div.main-content div#second-recent-news {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 170px 170px;
+    gap: 2px;
+    margin: 50px auto;
+}
+
+div.main-content div#second-recent-news :nth-child(1) {
+    grid-row: 1/3;
+}
+
+/* fourth design */
+div.main-content div.news-main div.main div.latest-news section.box-latest-news div.card-news {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 300px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.photo {
+    overflow: hidden;
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.caption div.category {
+    opacity: 1;
+    position: static;
+    margin-top: 20px;
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.caption h2 {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.caption p {
+    color: #555;
+    margin: 20px 0 20px;
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.caption a {
+    width: 160px;
+    height: 45px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px 0;
+    color: #555;
+    border: 1px solid rgb(218, 218, 218);
+    position: relative;
+    overflow: hidden;
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.caption a:hover {
+    color: #fff;
+    border: 1px solid #2962FF;
+
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.caption a:hover div.mask {
+    width: 100%;
+    height: 100%;
+    background-color: #2962FF;
+    position: absolute;
+    right: 0%;
+    padding: 10px 0;
+    animation: button .7s linear;
+}
+
+@keyframes button {
+    0% {
+        position: absolute;
+        right: -100%;
+    }
+
+    50% {
+        position: absolute;
+        right: 0%;
+    }
+
+    80% {
+        position: absolute;
+        right: -20%;
+    }
+
+    100% {
+        position: absolute;
+        right: 0%;
+    }
+}
+
+div.main-content div.news-main div.main section.box-latest-news div.card-news div.caption div.date {
+    color: #555;
+    font-size: 12px;
+}
+
+/* most visited */
+div.main-content div.news-main section.most-visited div.card {
+    width: 100%;
+    height: 290px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to top, #0000002c, transparent);
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask h3 {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000000e8;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask div.date {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000000e8;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask div.like {
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    right: -100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50px 0 0 50px;
+    color: red;
+    background-image: linear-gradient(to right, #ff7e43, #8e02ffd1);
+    font-size: 20px;
+    transition: .5s;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask div.like span {
+    color: #fff;
+    font-size: 12px;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask div.share {
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 90px;
+    right: -100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50px 0 0 50px;
+    color: #fff;
+    background-image: linear-gradient(to right, #ff7e43, #8e02ffd1);
+    font-size: 20px;
+    transition: .8s;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask div.share span {
+    color: #fff;
+    font-size: 12px;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask:hover div.like {
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+
+div.main-content div.news-main section.most-visited div.card div.mask:hover div.share {
+    position: absolute;
+    top: 90px;
+    right: 0;
+}
+
+/* footer */
+/* top footer */
+footer div.top-footer {
+    width: 100%;
+    height: 150px;
+    background-color: #000038;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+div.box-design-right {
+    width: 40%;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+}
+
+div.box-design-right>div {
+    height: 400px;
+    border-radius: 50% 50%/50% 30%;
+    border: 1px solid #3074ac;
+    position: absolute;
+    right: 90px;
+    transform: rotate(30deg);
+}
+
+div.box-design-right div.box1 {
+    width: 80%;
+    top: 10px;
+}
+
+div.box-design-right div.box2 {
+    width: 75%;
+    top: 13px;
+}
+
+div.box-design-right div.box3 {
+    width: 70%;
+    top: 15px;
+}
+
+div.box-design-right div.box4 {
+    width: 65%;
+    top: 17px;
+}
+
+div.box-design-right div.box5 {
+    width: 60%;
+    top: 19px;
+}
+
+div.box-design-right div.box6 {
+    width: 55%;
+    top: 21px;
+}
+
+div.box-design-right div.box7 {
+    width: 50%;
+    top: 23px;
+}
+
+div.box-design-right div.box8 {
+    width: 45%;
+    top: 25px;
+}
+
+div.box-design-right div.box9 {
+    width: 40%;
+    top: 27px;
+}
+
+div.box-design-right div.box10 {
+    width: 35%;
+    top: 29px;
+}
+
+div.box-design-right div.box11 {
+    width: 30%;
+    top: 31px;
+}
+
+div.box-design-right div.box12 {
+    width: 25%;
+    top: 33px;
+}
+
+div.box-design-right div.box13 {
+    width: 20%;
+    top: 35px;
+}
+
+div.box-design-right div.box14 {
+    width: 15%;
+    top: 37px;
+}
+
+div.box-design-right div.box15 {
+    width: 10%;
+    top: 39px;
+}
+
+div.box-design-right div.box16 {
+    width: 5%;
+    top: 41px;
+}
+
+/* Newsletters */
+footer div.top-footer div.newslatters {
+    width: 40%;
+    height: 130px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 12px 0px #43c4ff;
+}
+
+footer div.top-footer div.newslatters div.mask {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/background/1.jpg);
+    background-size: cover;
+    filter: blur(1px);
+}
+
+footer div.top-footer div.newslatters div.caption {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+footer div.top-footer div.newslatters div.caption span {
+    margin: 5px 10px 5px;
+    display: inline-block;
+    color: #333;
+    font-size: 22px;
+}
+
+footer div.top-footer div.newslatters div.caption form input.email {
+    width: 80%;
+    height: 35px;
+    margin: auto;
+    display: block;
+    outline: none;
+}
+
+footer div.top-footer div.newslatters div.caption form input.button {
+    width: 150px;
+    height: 30px;
+    margin: 10px 10%;
+}
+
+footer div.bottom-footer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000008;
+    color: #A5A5A5;
+    padding: 0 5%;
+}
+
+footer div.bottom-footer nav {
+    font-size: 14px;
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer div.bottom-footer nav a:hover {
+    color: #2962ff;
+}
+
+/* social network */
+footer div.social-network {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+footer div.social-network>div {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #27282A;
+    transition: .5s;
+    margin-left: 10px;
+}
+
+footer div.social-network>div:hover {
+    background-color: #2962ff;
+}
+
+footer div.social-network>div span {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+footer div.social-network>div:hover span {
+    transform: translateY(-30px);
+}
+
+footer div.social-network>div div.mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+footer div.social-network>div:hover div.mask {
+    transform: translateY(-28px);
+}
